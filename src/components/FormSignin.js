@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import PayPal from './PayPal'
+import CreditCard from './CreditCard'
 
 function FormSignin() {
     let y = JSON.parse(localStorage.getItem('user'))
@@ -71,7 +73,8 @@ function FormSignin() {
                     </button>
                 </form>
             </div>
-            ): y.select == "PayPal"? "PayPal btn": y.select == "CreditCard"? "CreditCard btn":"error"}
+            ): y.select == "PayPal"? <PayPal/>: 
+            y.select == "CreditCard"? <CreditCard/>:"error"}
         </div>
     )
 }
